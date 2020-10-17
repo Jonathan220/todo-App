@@ -1,10 +1,11 @@
 import React from 'react';
 import TodoItem from './TodoItem';
 
-function Todos(prop){
-    return (prop.todos.map((todo) => {
+function Todos(props){
+
+    return (props.todos.map((todo) => {
         return(
-                <TodoItem key={todo.id} todo={todo} />
+                <TodoItem key={todo.id} todo={todo} markComplete={props.markComplete}/>
         )
     }))
 }

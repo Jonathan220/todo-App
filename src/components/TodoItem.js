@@ -1,6 +1,7 @@
 import React from 'react';
 
 function TodoItem(props){
+    
     let getStyle = () =>{
         // if(props.todo.completado){
         //     return{
@@ -22,7 +23,7 @@ function TodoItem(props){
     return(
         <div style={getStyle()}>           
             <p>
-                <input type='checkbox' style={{marginRight : '10px'}} />
+                <input type='checkbox' style={{marginRight : '10px'}} onChange={props.markComplete.bind(this, props.todo.id)}/>
                 {props.todo.titulo}
             </p>
         </div>
