@@ -1,31 +1,12 @@
 import React from 'react';
+import TodoItem from './TodoItem';
 
-function Todos() {
-    const state = {
-    todos: [
-        {
-            id: 1,
-            titulo: 'Fazer café',
-            Completado: false
-        },
-        {
-            id: 2,
-            titulo: 'Tomar banho',
-            Completado: false
-        },
-        {
-            id: 3,
-            titulo: 'Lavar a roupa',
-            Completado: false
-        }
-    ]
-    }
-    console.log(state.todos);
-    return (
-    <div>
-      <h1>Componente Todo</h1>
-    </div>
-  );
+function Todos(prop){
+    return (prop.todos.map((todo) => {
+        return(
+                <TodoItem key={todo.id} todo={todo} />
+        )
+    }))
 }
 
 export default Todos;
